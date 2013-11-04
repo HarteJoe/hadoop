@@ -1,5 +1,5 @@
-This project is my Hadoop MapReduce application written in Java. Also present is my Pig script for the same task.
+This project is my Hadoop MapReduce application written in Java for my Cloud Computing course undertaken at UCD. Also present is my Pig script for the same task.
 
-It takes an Apache log file as input, whose entries follow a particular format. It determines the number of unique hits per Hour, Day, Week, Month and displays the results in a web browser (Firefox here).
+It takes an Apache webserver log file as input, whose entries follow a particular format. It determines the number of unique hits per Hour, Day, Week, Month and displays the results in a web browser (Firefox here).
 
 
