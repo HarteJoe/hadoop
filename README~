@@ -1,8 +1,0 @@
-This project is my Hadoop MapReduce application written in Java for my Cloud Computing course undertaken at UCD. 
-
-It takes an Apache webserver log file as input, whose entries follow a particular format. It determines the number of unique hits per Hour, Day, Week, Month and displays the results in a web browser (Firefox here).
-The code consists of Mapper classes, Reducer classes, a class to write HTML files with the results, and a Main class.
-
-The application also determines the number of hits relating to certain attack signatures such as a request to access the /proc/self/environ directory on a UNIX system.
-
-Also present is my Pig script for unique hits Monthly case.
