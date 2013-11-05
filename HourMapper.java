@@ -1,8 +1,7 @@
 /*
-** @Author: Josef Harte		@Student Number: 12251747		@Email: josef.harte@ucdconnect.ie
-** @Date last modified: 26 / 03 / 2013
-** @Purpose: This class maps a timestamp String (the output key) of form "year / month / day @hour" to a host String (the output value).
-** @Outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
+** @author: Josef Harte
+** @purpose: This class maps a timestamp String (the output key) of form "year / month / day @hour" to a host String (the output value).
+** @outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
 ** of the line in the file. This key is ignored. Map also takes a Context argument to which the output (key, value) pair is written. A regular expression is
 ** used to find the timestamp in the line. The required parts are then removed from the timestamp String and reordered for convenience. Another regular 
 ** expression finds the host String.

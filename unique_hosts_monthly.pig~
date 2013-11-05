@@ -1,5 +1,5 @@
 /* 
-** @author: Josef Harte
+** @Author: Josef Harte		@Student_Number: 12251747		@Date_Last_Modified: 12/03/2013	
 ** This Pig script determines the number of unique hosts per month in the sample Apache log file "access.log" based upon a single entry per line
 ** and each entry having the format shown in the following sample entry between << and >>:
 ** <<192.251.226.205 - - [06/Dec/2010:17:28:34 +0100] "GET /favicon.ico HTTP/1.1" 404 333 "-" "Mozilla/5.0 (X11; U; Linux i686; sv-SE; rv:1.9.0.19) Gecko/2010091807

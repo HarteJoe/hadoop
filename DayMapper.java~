@@ -1,10 +1,11 @@
 /*
-** @author: Josef Harte	
-** @purpose: This class maps a timestamp String (the key) of form "year / month" to a host String (the value).
-** @outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
+** @Author: Josef Harte		@Student Number: 12251747		@Email: josef.harte@ucdconnect.ie
+** @Date last modified: 26 / 03 / 2013
+** @Purpose: This class maps a timestamp String (the output key) of form "year / month / day" to a host String (the output value).
+** @Outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
 ** of the line in the file. This key is ignored. Map also takes a Context argument to which the output (key, value) pair is written. A regular expression is
 ** used to find the timestamp in the line. The required parts are then removed from the timestamp String and reordered for convenience. Another regular 
-** expression finds the host String.
+** expression finds the host String. Output (key, value) is actually of class Text, which is comparable to String but optimized for network serialization.
 */
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -13,12 +14,12 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class MonthMapper extends Mapper < LongWritable, Text, Text, Text > {
+public class DayMapper extends Mapper< LongWritable , Text, Text, Text > {
     
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    public void map( LongWritable key, Text value, Context context ) throws IOException, InterruptedException {
         
-        // Extract the timestamp from the line
+        /* Extract the timestamp from the line */
         String line = value.toString();
         Pattern pat = Pattern.compile("\\[.+\\]");
         Matcher mat = pat.matcher( line );
@@ -29,14 +30,16 @@ public class MonthMapper extends Mapper < LongWritable, Text, Text, Text > {
             System.exit(1);
         } else {
             timeStamp = mat.group();
-        } 
+        }
         
-        // Extract the month from the timestamp and reorder
+        /* Reorder the timestamp string */
         String year = timeStamp.substring( 8, 12 );
         String month = timeStamp.substring( 4, 7 );
-        String monthStamp = year + " / " + month + " ---- ";
+        String day = timeStamp.substring( 1, 3 );
         
-        // Extract the host from the input line
+        String dayStamp = year + " / " + month + " / " + day + " ---- ";
+        
+        /* Extract the host from the input line */
         pat = Pattern.compile("(^.[^ ]+ )");
         mat = pat.matcher( line );
         found = mat.find();
@@ -49,7 +52,7 @@ public class MonthMapper extends Mapper < LongWritable, Text, Text, Text > {
         }
         String host = temp.trim();
         
-        context.write( new Text(monthStamp), new Text(host) );
+        context.write( new Text(dayStamp), new Text(host) );              
     }
     
 }

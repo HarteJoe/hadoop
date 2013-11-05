@@ -1,6 +1,8 @@
 /*
-** @author: Josef Harte
-** @purpose: This the the reducer class for all the mapper classes finding unique hosts. The output key is the timestamp that ** came from the mapper class and the output value is the unique number of hosts for that particular timestamp.
+** @Author: Josef Harte		@Student Number: 12251747		@Email: josef.harte@ucdconnect.ie
+** @Date last modified: 26 / 03 / 2013
+** @Purpose: This the the reducer class for all the mapper classes finding unique hosts. The output key is the timestamp that came
+** from the mapper class and the output value is the unique number of hosts for that particular timestamp.
 ** Output (key, value) is actually of class Text, which is comparable to String but optimized for network serialization.
 */
 import java.io.IOException;

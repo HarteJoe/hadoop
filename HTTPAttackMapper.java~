@@ -1,8 +1,9 @@
 /*
-** @author: Josef Harte
-** @purpose: This class is used to find occurences of particular HTTP attack types in the log file. The output key is the attack type and
+** @Author: Josef Harte		@Student Number: 12251747		@Email: josef.harte@ucdconnect.ie
+** @Date last modified: 26 / 03 / 2013
+** @Purpose: This class is used to find occurences of particular HTTP attack types in the log file. The output key is the attack type and
 ** the output value is an empty String simply used to count the number of occurences of that attack type.
-** @outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
+** @Outline: The class extends Mapper and overrides its map method. Map receives a line from the log file as the value, the key being the byte offset
 ** of the line in the file. This key is ignored. Map also takes a Context argument to which the output (key, value) pair is written. A regular expression is 
 ** used to find occurences of a directory traversal (../) in the URL String of the HTTP request. If this pattern is found, the URL is searched for occurences
 ** of "/etc/passwd" or "/proc/self/environ". These are two common files on a UNIX system that attackers try to gain access to with a directory traversal. 

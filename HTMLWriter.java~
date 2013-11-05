@@ -1,7 +1,8 @@
 /*
-** @author: Josef Harte
-** @purpose: This class contains a single method writeHTML that writes the output Hadoop data to a HTML file for displaying.
-** @outline: The lone method writeHTML takes two Strings as arguments. These arguments are the directory where the data file to be processed 
+** @Author: Josef Harte		@Student Number: 12251747		@Email: josef.harte@ucdconnect.ie
+** @Date last modified: 31 / 03 / 2013
+** @Purpose: This class contains a single method writeHTML that writes the output Hadoop data to a HTML file for displaying.
+** @Outline: The lone method writeHTML takes two Strings as arguments. These arguments are the directory where the data file to be processed 
 ** is located (and output HTML file), and the name to be given to the output HTML file. The data file name follows the standard Hadoop name "part-r-00000".
 ** HTML5 is used and a CSS file called "style.css", residing in the same directory as the Hadoop output directory, is specified for styling purposes.
 ** Each line of the input data file is read in and written as a list item (<li>) in an unordered list(<ul>).

@@ -1,8 +1,3 @@
-/*
-** @author: Josef Harte
-** @purpose: The reducer class for the HTTP attack signatures
-*/
-
 import java.io.IOException;
 import java.util.ArrayList;
 import org.apache.hadoop.io.Text;

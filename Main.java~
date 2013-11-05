@@ -1,6 +1,6 @@
 /*
-** @author: Josef Harte
-** @purpose: This class sets up all of the MapReduce jobs and displays results in Firefox.
+** @Author: Josef Harte
+** @Purpose: This class sets up all of the MapReduce jobs and displays results in Firefox.
 */
 import java.io.IOException;
 import org.apache.hadoop.fs.Path;
